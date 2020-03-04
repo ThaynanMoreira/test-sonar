@@ -20,17 +20,13 @@ class App {
     this.server.use(helmet.noSniff())
     this.server.disable('x-powered-by')
 
-    this.middlewares();
+    this.middlewares2();
     this.routes();
     this.exceptionHandler();
   }
 
-  middlewares() {
+  middlewares2() {
     this.server.use(express.json());
-    this.server.use(
-      '/files',
-      express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
-    );
   }
 
   routes() {
