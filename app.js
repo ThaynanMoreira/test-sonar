@@ -35,7 +35,9 @@ class App {
 
   routes() {
     this.server.use(cors());
-    this.server.use(routes);
+    if(routes) {
+      this.server.use(routes);
+    }
   }
 
   exceptionHandler() {
